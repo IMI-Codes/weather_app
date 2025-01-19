@@ -1,3 +1,11 @@
 **Weather App with API Integration** 
    - **Skills tested**: API usage, data parsing, error handling.
    - **Description**: Use a weather API (like OpenWeatherMap) to fetch the current weather for a given city. Display details such as temperature, humidity, and conditions, with user-friendly error messages for invalid input.
+
+# lat={lat}&lon={lon}&appid={API key}
+# r = requests.get(url)
+# r = requests.get(url/get,paramas=payload)
+# r.status_code
+# r.okay
+# r.url
+# r.json
