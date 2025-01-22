@@ -7,10 +7,13 @@ BASE_URL = "https://api.openweathermap.org/data/2.5/weather?"
 
 
 def get_current_location_data():
+    try:
 
-    g = geocoder.ip("me")
-    latitude, longitude = g.latlng
-    return {"latitude": latitude, "longitude": longitude}
+        g = geocoder.ip("me")
+        latitude, longitude = g.latlng
+        return {"latitude": latitude, "longitude": longitude}
+    except:
+        print("Error Occurred")
 
 
 def get_location_data(location: str):
