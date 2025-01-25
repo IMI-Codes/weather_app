@@ -1,4 +1,3 @@
-from geopy.geocoders import Nominatim
 import requests
 import geocoder
 
@@ -16,26 +15,24 @@ def get_current_location_data():
         print("Error Occurred")
 
 
-def get_location_data(location: str):
-    geolocator = Nominatim(user_agent="my_weather_app")
-    location_name = location
-    location_data = geolocator.geocode(location)
-    if location:
-        return {
-            "latitude": location_data.latitude,  # type: ignore
-            "longitude": location_data.longitude,  # type: ignore
-        }
-    else:
-        print(f"Could not find location: {location}")
+# this works
 
 
 def url_builder(values: dict):
-    latitude, longitude = values
+    co_ordinates = values
+    latitude = values["latitude"]
+    longitude = values["longitude"]
     second_half = f"lat={latitude}&lon={longitude}&appid={API_KEY}"
     final_url = f"{BASE_URL}{second_half}"
     return final_url
 
 
+# this works
+
+
 def get_weather_data(url):
     data = requests.get(url)
     return data.json()
+
+
+# this works
